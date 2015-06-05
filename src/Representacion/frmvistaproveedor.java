@@ -7,6 +7,7 @@ package Representacion;
 
 import Datos.fcliente;
 import Datos.fproveedor;
+import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,8 +24,13 @@ public class frmvistaproveedor extends javax.swing.JInternalFrame {
      * Creates new form frmvistacliente
      */
     public frmvistaproveedor() {
-            initComponents();
-            mostrar("");
+        initComponents();
+        mostrar("");
+            
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btnagregar.addKeyListener(new AddKey(btnagregar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));            
+            
     }
      void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);

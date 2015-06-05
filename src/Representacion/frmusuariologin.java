@@ -6,8 +6,16 @@
 package Representacion;
 
 import Datos.fusuario;
+import Java_Class.AddKey;
 import Logica.vusuario;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,7 +32,40 @@ public class frmusuariologin extends javax.swing.JFrame {
         inhabilitar();
         this.setTitle("Acceso al Sistema Gigantografías Master");
         this.setLocationRelativeTo(null);
+        
+        btningresar.addKeyListener(new AddKey(btningresar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        
+//        btningresar.addKeyListener(new PresionarTecla());
+//        
+//        addScapeKey();
+        
     }
+    
+    
+//    public class PresionarTecla extends KeyAdapter {
+// 
+//      public void keyPressed(KeyEvent ke) {
+//            if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
+//                btningresar.doClick();
+//            }
+//      }
+//    }
+//    
+//    public void addScapeKey(){
+//        KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
+//        Action atcescape = new AbstractAction(){
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                btnsalir.doClick();
+//            }
+//            
+//        };
+//        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
+//        getRootPane().getActionMap().put("ESCAPE", atcescape);
+//    }
+    
     
     void inhabilitar(){
         tablalistado.setVisible(false);

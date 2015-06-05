@@ -7,6 +7,7 @@ package Representacion;
 
 
 import Datos.ftipooperacion;
+import Java_Class.AddKey;
 
 import Logica.vtipooperacion;
 import javax.swing.JOptionPane;
@@ -25,6 +26,12 @@ public class frmtipooperacion extends javax.swing.JInternalFrame {
         initComponents();
         mostrar("");
         inhabilitar();
+        
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        
     }
     
      private String accion = "guardar";
@@ -198,6 +205,12 @@ public class frmtipooperacion extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tablalistado);
 
         jLabel9.setText("Buscar");
+
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
 
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/buscar.png"))); // NOI18N
         btnbuscar.setText("Buscar");
@@ -406,6 +419,10 @@ public class frmtipooperacion extends javax.swing.JInternalFrame {
         this.getDesktopPane().getDesktopManager().closeFrame(this);
         inhabilitar();
     }//GEN-LAST:event_btnsalirActionPerformed
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        btnbuscar.requestFocus();
+    }//GEN-LAST:event_txtbuscarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,11 +6,18 @@
 package Representacion;
 
 import Datos.fplancha;
+import Java_Class.AddKey;
 import Logica.vplancha;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import Restricciones.LetrasODigitos;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -28,7 +35,36 @@ public class frmplancha extends javax.swing.JInternalFrame {
         
         LetrasODigitos.soloDigitos(txtstock);
         
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btncancelar.addKeyListener(new AddKey(btncancelar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        btneliminar.addKeyListener(new AddKey(btneliminar));
+        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        
+        //AddScapeKey.addScapeKey(this);
+        
+//        addScapeKey();
+        
     }
+    
+//    public void addScapeKey(){
+//        //JInternalFrame jifaux = this;
+//        KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
+//        Action atcescape = new AbstractAction(){
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                btnsalir.doClick();
+//                inhabilitar();
+//            }
+//            
+//        };
+//        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
+//        getRootPane().getActionMap().put("ESCAPE", atcescape);
+//    }
+    
+    
     private String accion = "guardar";
     
     void ocultar_columnas() {

@@ -6,6 +6,7 @@
 package Representacion;
 
 import Datos.fplancha;
+import Java_Class.AddKey;
 import Representacion.frmoperacion;
 import Representacion.frmopentrada;
 import javax.swing.JOptionPane;
@@ -24,6 +25,10 @@ public class frmvistaplancha extends javax.swing.JInternalFrame {
         initComponents();
         mostrar("");
         //this.setLocationRelativeTo(null);
+        
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));        
+        
     }
     
      void ocultar_columnas() {

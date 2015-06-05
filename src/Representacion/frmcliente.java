@@ -1,6 +1,7 @@
 package Representacion;
 
 import Datos.fcliente;
+import Java_Class.AddKey;
 import Logica.vcliente;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -25,6 +26,13 @@ public class frmcliente extends javax.swing.JInternalFrame {
         LetrasODigitos.soloDigitos(txtdocumento);
         
         //Lector_de_teclas.Lector(this);
+        
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btncancelar.addKeyListener(new AddKey(btncancelar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        btneliminar.addKeyListener(new AddKey(btneliminar));
+        btnguardar.addKeyListener(new AddKey(btnguardar));
         
     }
     
@@ -353,6 +361,12 @@ public class frmcliente extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Buscar");
 
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
+
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/buscar.png"))); // NOI18N
         btnbuscar.setText("Buscar");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -492,7 +506,8 @@ public class frmcliente extends javax.swing.JInternalFrame {
 
     private void txttelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttelefonoActionPerformed
         // TODO add your handling code here:
-        txttelefono.transferFocus();
+        //txttelefono.transferFocus();
+        btnguardar.requestFocus();
     }//GEN-LAST:event_txttelefonoActionPerformed
 
     
@@ -657,6 +672,10 @@ public class frmcliente extends javax.swing.JInternalFrame {
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        txtbuscar.transferFocus();
+    }//GEN-LAST:event_txtbuscarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,6 +6,7 @@
 package Representacion;
 
 import Datos.fproveedor;
+import Java_Class.AddKey;
 import Logica.vproveedor;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -34,6 +35,13 @@ public class frmproveedor extends javax.swing.JInternalFrame {
         
         LetrasODigitos.soloDigitos(txtruc);
         txtruc.setDocument(new LimitarCaracteres(txtruc,11));
+        
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btncancelar.addKeyListener(new AddKey(btncancelar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        btneliminar.addKeyListener(new AddKey(btneliminar));
+        btnguardar.addKeyListener(new AddKey(btnguardar));        
         
     }
     

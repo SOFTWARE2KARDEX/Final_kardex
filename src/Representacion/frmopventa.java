@@ -2,6 +2,7 @@
 package Representacion;
 
 import Datos.fopventa;
+import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
 import Logica.vopventa;
 import java.sql.Date;
@@ -22,6 +23,14 @@ public class frmopventa extends javax.swing.JInternalFrame {
         initComponents();
         mostrar("");
         inhabilitar();
+        
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btnbuscarplancha.addKeyListener(new AddKey(btnbuscarplancha));
+        btnbuscliente.addKeyListener(new AddKey(btnbuscliente));
+        btneliminar.addKeyListener(new AddKey(btneliminar));
+        btnguardar.addKeyListener(new AddKey(btnguardar));
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
         
     }
     

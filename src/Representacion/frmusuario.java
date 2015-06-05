@@ -6,6 +6,7 @@
 package Representacion;
 
 import Datos.fusuario;
+import Java_Class.AddKey;
 import Logica.vusuario;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +24,14 @@ public class frmusuario extends javax.swing.JInternalFrame {
         initComponents();
         mostrar("");
         inhabilitar();
+        
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btncancelar.addKeyListener(new AddKey(btncancelar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        btneliminar.addKeyListener(new AddKey(btneliminar));
+        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        
     }
     private String accion = "guardar";
 

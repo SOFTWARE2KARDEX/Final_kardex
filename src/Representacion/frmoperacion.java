@@ -2,6 +2,7 @@
 package Representacion;
 
 import Datos.foperacion;
+import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
 
 import Logica.voperacion;
@@ -27,6 +28,15 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         
         LetrasODigitos.soloDigitos(txtcantidad);
         LetrasODigitos.soloDigitos(txtexistencia);
+        
+        btnnuevo.addKeyListener(new AddKey(btnnuevo));
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btnbuscarplancha.addKeyListener(new AddKey(btnbuscarplancha));
+        btnbuscaroperacion.addKeyListener(new AddKey(btnbuscaroperacion));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        btneliminar.addKeyListener(new AddKey(btneliminar));
+        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        
         
     }
     

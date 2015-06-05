@@ -415,6 +415,7 @@ public class frminicio extends javax.swing.JFrame {
     private void musalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musalirMouseClicked
         // TODO add your handling code here:
         System.exit(0);
+        musalir.requestFocus();
     }//GEN-LAST:event_musalirMouseClicked
 
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed

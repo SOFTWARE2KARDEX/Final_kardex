@@ -6,6 +6,7 @@
 package Representacion;
 
 import Datos.fcliente;
+import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +23,11 @@ public class frmvistacliente extends javax.swing.JInternalFrame {
     public frmvistacliente() {
         initComponents();
         mostrar("");
+        
+        btnbuscar.addKeyListener(new AddKey(btnbuscar));
+        btnagregar.addKeyListener(new AddKey(btnagregar));
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        
     }
      void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -90,6 +96,12 @@ public class frmvistacliente extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tablalistado);
 
         jLabel9.setText("Buscar");
+
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
 
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/buscar.png"))); // NOI18N
         btnbuscar.setText("Buscar");
@@ -226,6 +238,10 @@ public class frmvistacliente extends javax.swing.JInternalFrame {
         
         CentrarVentanaInterna.FocusInternalWindow(form);
     }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        btnbuscar.requestFocus();
+    }//GEN-LAST:event_txtbuscarActionPerformed
 
     /**
      * @param args the command line arguments
