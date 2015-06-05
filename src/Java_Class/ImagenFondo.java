@@ -18,7 +18,7 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author usuario
+ * @author Anthony 
  */
 public class ImagenFondo implements Border {
 
