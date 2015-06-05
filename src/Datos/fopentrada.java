@@ -41,8 +41,8 @@ public class fopentrada {
 //            "(select apellido from Usuario where idUsuario=o.idUsuario)as apel,o.Cantidad,"+
 //            "o.Fecha,e.Documento from Operacion o inner join Opentrada e on o.idOperacion=e.idOperacion where o.Fecha like '%"+ buscar + "%' order by idOperacion desc";
         sSQL="select o.idOperacion,o.idTipooperacion,e.idProveedor,pr.RazonSocial,o.idPlancha,p.Tamaño,p.Medida, " +
-                "o.idUsuario,u.nombre,u.apellido,o.Cantidad,o.Fecha,e.Documento" +
-                "from Opentrada e inner join Operacion o" +
+                "o.idUsuario,u.nombre,u.apellido,o.Cantidad,o.Fecha,e.Documento " +
+                "from Opentrada e inner join Operacion o " +
                 "on e.idOperacion=o.idOperacion " +
                 "inner join Plancha p " +
                 "on o.idPlancha=p.idPlancha " +
@@ -52,7 +52,7 @@ public class fopentrada {
                 "on o.idUsuario=u.idUsuario " +
                 "inner join Proveedor pr " +
                 "on e.idProveedor=pr.idProveedor " +
-                "where o.Fecha like '%"+ buscar +"%'"+
+                "where o.Fecha like '%" + buscar + "%'"+
                 "order by e.idOperacion desc";
        try {
            Statement st= cn.createStatement();
