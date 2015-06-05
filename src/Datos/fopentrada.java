@@ -6,7 +6,6 @@
 package Datos;
 
 import Logica.vopentrada;
-import Logica.vopventa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,19 +28,32 @@ public class fopentrada {
     public DefaultTableModel mostrar(String buscar){
        DefaultTableModel modelo;
        
-       String [] titulos = {"ID","IdOperacion","IdProveedor","Proveedor","IdPlancha","Plancha","IdUsuario","Usuario","Cantidad","Existencia","Fecha","Documento"};
+       String [] titulos = {"ID","IdOperacion","IdProveedor","Proveedor","IdPlancha","Plancha","IdUsuario","Usuario","Cantidad","Fecha","Documento"};
        
-       String [] registro =new String [12];
+       String [] registro =new String [11];
        
        totalregistros=0;
        modelo = new DefaultTableModel(null,titulos);
        
-       sSQL="select o.idOperacion,o.idTipooperacion,e.idProveedor,(select RazonSocial from Proveedor where idProveedor=e.idProveedor)as proveedor,"+
-            "o.idPlancha,(select Tamaño from Plancha where idPlancha=o.idPlancha)as tamaño ,"+
-            "(select Medida from Plancha where idPlancha=o.idPlancha)as medida,o.idUsuario,(select nombre from Usuario where idUsuario=o.idUsuario)as nomb,"+
-            "(select apellido from Usuario where idUsuario=o.idUsuario)as apel,o.Cantidad,o.Existencia,"+
-            "o.Fecha,e.Documento from Operacion o inner join Opentrada e on o.idOperacion=e.idOperacion where o.Fecha ='"+ buscar + "' order by idOperacion desc";
-       
+//       sSQL="select o.idOperacion,o.idTipooperacion,e.idProveedor,(select RazonSocial from Proveedor where idProveedor=e.idProveedor)as proveedor,"+
+//            "o.idPlancha,(select Tamaño from Plancha where idPlancha=o.idPlancha)as tamaño ,"+
+//            "(select Medida from Plancha where idPlancha=o.idPlancha)as medida,o.idUsuario,(select nombre from Usuario where idUsuario=o.idUsuario)as nomb,"+
+//            "(select apellido from Usuario where idUsuario=o.idUsuario)as apel,o.Cantidad,"+
+//            "o.Fecha,e.Documento from Operacion o inner join Opentrada e on o.idOperacion=e.idOperacion where o.Fecha like '%"+ buscar + "%' order by idOperacion desc";
+        sSQL="select o.idOperacion,o.idTipooperacion,e.idProveedor,pr.RazonSocial,o.idPlancha,p.Tamaño,p.Medida, " +
+                "o.idUsuario,u.nombre,u.apellido,o.Cantidad,o.Fecha,e.Documento" +
+                "from Opentrada e inner join Operacion o" +
+                "on e.idOperacion=o.idOperacion " +
+                "inner join Plancha p " +
+                "on o.idPlancha=p.idPlancha " +
+                "inner join Tipooperacion t " +
+                "on o.idTipooperacion=t.idTipooperacion " +
+                "inner join Usuario u " +
+                "on o.idUsuario=u.idUsuario " +
+                "inner join Proveedor pr " +
+                "on e.idProveedor=pr.idProveedor " +
+                "where o.Fecha like '%"+ buscar +"%'"+
+                "order by e.idOperacion desc";
        try {
            Statement st= cn.createStatement();
            ResultSet rs=st.executeQuery(sSQL);
@@ -50,16 +62,15 @@ public class fopentrada {
                registro [0]=rs.getString("idOperacion");
                registro [1]=rs.getString("idTipooperacion");
                registro [2]=rs.getString("idProveedor");
-               registro [3]=rs.getString("proveedor");
+               registro [3]=rs.getString("RazonSocial");
                
                registro [4]=rs.getString("idPlancha");
-               registro [5]=rs.getString("tamaño") + " " + rs.getString("medida");
+               registro [5]=rs.getString("Tamaño") + " " + rs.getString("Medida");
                registro [6]=rs.getString("idUsuario");
-               registro [7]=rs.getString("nomb") + " " + rs.getString("apel");
+               registro [7]=rs.getString("nombre") + " " + rs.getString("apellido");
                registro [8]=rs.getString("Cantidad");
-               registro [9]=rs.getString("Existencia");
-               registro [10]=rs.getString("Fecha");
-               registro [11]=rs.getString("Documento");
+               registro [9]=rs.getString("Fecha");
+               registro [10]=rs.getString("Documento");
                
                totalregistros=totalregistros+1;
                modelo.addRow(registro);
@@ -78,8 +89,8 @@ public class fopentrada {
    
    //Funcion Insertar
    public boolean insertar (vopentrada dts){
-       sSQL="insert into Operacion (idTipooperacion,idPlancha,idUsuario,Cantidad,Existencia,Fecha)" +
-               "values ((select idTipooperacion from Tipooperacion where idTipooperacion=1),?,?,?,?,?)";
+       sSQL="insert into Operacion (idTipooperacion,idPlancha,idUsuario,Cantidad,Fecha)" +
+               "values ((select idTipooperacion from Tipooperacion where idTipooperacion=1),?,?,?,?)";
        
        sSQL2="insert into Opentrada (idOperacion,idProveedor,Documento)" +
                "values ((select idOperacion from Operacion order by idOperacion desc limit 1),?,?)";
@@ -91,8 +102,7 @@ public class fopentrada {
            pst.setInt(1, dts.getIdPlancha());
            pst.setInt(2, dts.getIdUsuario());
            pst.setInt(3, dts.getCantidad());
-           pst.setInt(4, dts.getExistencia());
-           pst.setDate(5, dts.getFecha());
+           pst.setDate(4, dts.getFecha());
            
            pst2.setInt(1, dts.getIdProveedor());
            pst2.setString(2, dts.getDocumento());
@@ -125,7 +135,7 @@ public class fopentrada {
    
    //Funcion Editar
    public boolean editar (vopentrada dts){
-       sSQL="update Operacion set idPlancha=?,idUsuario=?,Cantidad=?,Existencia=?,Fecha=?"+
+       sSQL="update Operacion set idPlancha=?,idUsuario=?,Cantidad=?,Fecha=?"+
                " where idOperacion=?";
        sSQL="update Opentrada set idProveedor=?,Documento=?"+
                " where idOperacion=?";
@@ -138,9 +148,8 @@ public class fopentrada {
            pst.setInt(1, dts.getIdPlancha());
            pst.setInt(2, dts.getIdUsuario());
            pst.setInt(3, dts.getCantidad());
-           pst.setInt(4, dts.getExistencia());
-           pst.setDate(5, dts.getFecha());
-           pst.setInt(6, dts.getIdOperacion());
+           pst.setDate(4, dts.getFecha());
+           pst.setInt(5, dts.getIdOperacion());
            
            pst2.setInt(1, dts.getIdProveedor());
            pst2.setString(2, dts.getDocumento());

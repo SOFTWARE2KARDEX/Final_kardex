@@ -69,7 +69,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         //Bloque las cajas de texto
         txtproveedor.setEnabled(false);
         txtplancha.setEnabled(false);
-        txtexistencia.setEnabled(false);
         txtcantidad.setEnabled(false);
         txtusuario.setEnabled(false);
         dcfecha.setEnabled(false);
@@ -91,7 +90,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         txtcantidad.setText("");
         txtidusuario.setText("");
         txtusuario.setText("");
-        txtexistencia.setText("");
         txtdocumento.setText("");
         
        
@@ -112,7 +110,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         //Bloque las cajas de texto
         txtproveedor.setEnabled(false);
         txtplancha.setEnabled(false);
-        txtexistencia.setEnabled(false);
         txtcantidad.setEnabled(true);
         txtusuario.setEnabled(false);
         dcfecha.setEnabled(true);
@@ -134,7 +131,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         txtcantidad.setText("");
         //txtidusuario.setText("");
         //txtusuario.setText("");
-        txtexistencia.setText("");
         txtdocumento.setText("");
 
     }
@@ -187,7 +183,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         btnbusproveedor = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
@@ -201,7 +196,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         btnbuscarplancha = new javax.swing.JButton();
         txtcantidad = new javax.swing.JTextField();
-        txtexistencia = new javax.swing.JTextField();
         dcfecha = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
 
@@ -437,9 +431,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("Cantidad");
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("Existencia");
-
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Fecha");
 
@@ -501,12 +492,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
             }
         });
 
-        txtexistencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtexistenciaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -514,43 +499,38 @@ public class frmopentrada extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtexistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(txtidoperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(dcfecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnbuscarplancha1)
+                            .addComponent(txtidtipooperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtidplancha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtplancha, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnbuscarplancha, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(txtidoperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnbuscarplancha1)
-                                    .addComponent(txtidtipooperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)
                                 .addComponent(txtdocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel8))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtidplancha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtplancha, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnbuscarplancha, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(dcfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,14 +559,11 @@ public class frmopentrada extends javax.swing.JInternalFrame {
                     .addComponent(jLabel17)
                     .addComponent(jLabel8)
                     .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel15)
-                        .addComponent(txtexistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dcfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(188, 188, 188))
+                .addGap(189, 189, 189))
         );
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/ejecutivo.png"))); // NOI18N
@@ -692,8 +669,8 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         dts.setIdProveedor(Integer.parseInt(txtidproveedor.getText()));
         dts.setIdPlancha(Integer.parseInt(txtidplancha.getText()));
         
-        dts.setExistencia(Integer.parseInt(txtexistencia.getText()));
         dts.setCantidad(Integer.parseInt(txtcantidad.getText()));
+        dts.setDocumento(txtdocumento.getText());
         //Fecha
         Calendar cal;
         int d,m,a;
@@ -746,9 +723,9 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         txtidusuario.setText(tablalistado.getValueAt(fila, 6).toString());
         txtusuario.setText(tablalistado.getValueAt(fila, 7).toString());
         txtcantidad.setText(tablalistado.getValueAt(fila, 8).toString());
-        txtexistencia.setText(tablalistado.getValueAt(fila, 9).toString());
         //Fecha
-        dcfecha.setDate(Date.valueOf(tablalistado.getValueAt(fila, 10).toString()));
+        dcfecha.setDate(Date.valueOf(tablalistado.getValueAt(fila, 9).toString()));
+        txtdocumento.setText(tablalistado.getValueAt(fila, 10).toString());
         
         
         
@@ -796,10 +773,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
     private void txtplanchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtplanchaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtplanchaActionPerformed
-
-    private void txtexistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtexistenciaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtexistenciaActionPerformed
 
     private void btnbuscarplanchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarplanchaActionPerformed
         // TODO add your handling code here:
@@ -905,7 +878,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnsalir;
     private com.toedter.calendar.JDateChooser dcfecha;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
@@ -926,7 +898,6 @@ public class frmopentrada extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcantidad;
     private javax.swing.JTextField txtdocumento;
-    private javax.swing.JTextField txtexistencia;
     private javax.swing.JTextField txtidoperacion;
     public static javax.swing.JTextField txtidplancha;
     public static javax.swing.JTextField txtidproveedor;

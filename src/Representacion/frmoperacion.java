@@ -66,7 +66,6 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         //Bloque las cajas de texto
         txtoperacion.setEnabled(false);
         txtplancha.setEnabled(false);
-        txtexistencia.setEnabled(false);
         txtcantidad.setEnabled(false);
         txtusuario.setEnabled(false);
         dcfecha.setEnabled(false);
@@ -87,7 +86,7 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         txtcantidad.setText("");
         txtidusuario.setText("");
         txtusuario.setText("");
-        txtexistencia.setText("");
+
         
        
     }
@@ -107,7 +106,6 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         //Bloque las cajas de texto
         txtoperacion.setEnabled(false);
         txtplancha.setEnabled(false);
-        txtexistencia.setEnabled(false);
         txtcantidad.setEnabled(true);
         txtusuario.setEnabled(false);
         dcfecha.setEnabled(true);
@@ -128,7 +126,7 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         txtcantidad.setText("");
         //txtidusuario.setText("");
         //txtusuario.setText("");
-        txtexistencia.setText("");
+        
 
     }
 
@@ -566,7 +564,6 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         dts.setIdTipooperacion(Integer.parseInt(txtidtipooperacion.getText()));
         dts.setIdPlancha(Integer.parseInt(txtidplancha.getText()));
         
-        dts.setExistencia(Integer.parseInt(txtexistencia.getText()));
         dts.setCantidad(Integer.parseInt(txtcantidad.getText()));
         //Fecha
         Calendar cal;
@@ -619,9 +616,8 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         txtidusuario.setText(tablalistado.getValueAt(fila, 5).toString());
         txtusuario.setText(tablalistado.getValueAt(fila, 6).toString());
         txtcantidad.setText(tablalistado.getValueAt(fila, 7).toString());
-        txtexistencia.setText(tablalistado.getValueAt(fila, 8).toString());
         //Fecha
-        dcfecha.setDate(Date.valueOf(tablalistado.getValueAt(fila, 9).toString()));
+        dcfecha.setDate(Date.valueOf(tablalistado.getValueAt(fila, 8).toString()));
         
         
         
