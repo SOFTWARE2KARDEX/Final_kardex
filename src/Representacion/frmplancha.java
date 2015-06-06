@@ -370,6 +370,12 @@ public class frmplancha extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Buscar");
 
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
+
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/buscar.png"))); // NOI18N
         btnbuscar.setText("Buscar");
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -657,6 +663,10 @@ public class frmplancha extends javax.swing.JInternalFrame {
                 break;
         }
     }//GEN-LAST:event_cbtamañoActionPerformed
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        btnbuscar.requestFocus();
+    }//GEN-LAST:event_txtbuscarActionPerformed
 
     /**
      * @param args the command line arguments
