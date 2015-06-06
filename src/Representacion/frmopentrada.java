@@ -11,6 +11,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import static Representacion.frminicio.escritorio;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -36,12 +42,11 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         
     }
     
-    
-     private String accion = "guardar";
+    private String accion = "guardar";
      
      
-     public static int idusuario;
-     public static String usuario;
+    public static int idusuario;
+    public static String usuario;
 
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);

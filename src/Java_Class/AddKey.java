@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Java_Class;
 
 import static Representacion.frminicio.escritorio;
@@ -17,9 +13,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.KeyStroke;
 
 /**
- *
  * @author Anthony Flores Llantoy
- * 
  */
 
 public class AddKey extends KeyAdapter{
@@ -35,21 +29,5 @@ public class AddKey extends KeyAdapter{
             jbutton.doClick();
         }
     }
-    
-      
-//    public void keyScape(JButton jbutton){
-//        KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
-//        Action atcescape = new AbstractAction(){
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                jbutton.doClick();
-//                //inhabilitar();
-//            }
-//            
-//        };
-//        escritorio.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
-//        escritorio.getRootPane().getActionMap().put("ESCAPE", atcescape);
-//    }
     
 }

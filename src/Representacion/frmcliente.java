@@ -11,6 +11,11 @@ import javax.swing.table.DefaultTableModel;
 
 import Restricciones.LimitarCaracteres;
 import Restricciones.LetrasODigitos;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -35,7 +40,6 @@ public class frmcliente extends javax.swing.JInternalFrame {
         btnguardar.addKeyListener(new AddKey(btnguardar));
         
     }
-    
     
     private String accion = "guardar";
 

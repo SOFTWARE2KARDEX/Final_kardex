@@ -30,6 +30,7 @@ public class CentrarVentanaInterna {
             internalFrame.setLocation(x,y);
             internalFrame.show();
             internalFrame.toFront();
+            internalFrame.requestFocus();
         }
     }    
     

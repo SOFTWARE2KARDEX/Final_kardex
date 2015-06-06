@@ -7,22 +7,28 @@ package Representacion;
 
 import Datos.fplancha;
 import Java_Class.AddKey;
+import Java_Class.KeyScape;
 import Logica.vplancha;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import Restricciones.LetrasODigitos;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JComponent;
+import javax.swing.JInternalFrame;
 import javax.swing.KeyStroke;
 
 /**
  *
  * @author HENRY
+ * 
  */
+
 public class frmplancha extends javax.swing.JInternalFrame {
 
     /**
@@ -41,10 +47,18 @@ public class frmplancha extends javax.swing.JInternalFrame {
         btnsalir.addKeyListener(new AddKey(btnsalir));
         btneliminar.addKeyListener(new AddKey(btneliminar));
         btnguardar.addKeyListener(new AddKey(btnguardar));        
+
+        //addScapeKey();
         
-        //AddScapeKey.addScapeKey(this);
+        addKeyListener(new KeyScape(this));
         
-//        addScapeKey();
+//        this.addKeyListener(new KeyAdapter(){
+//            public void keyTyped(KeyEvent ke_event){
+//                if(ke_event.getKeyCode() == KeyEvent.VK_ESCAPE){
+//                    btnsalir.doClick();
+//                }
+//            }
+//        });
         
     }
     
@@ -55,7 +69,7 @@ public class frmplancha extends javax.swing.JInternalFrame {
 //
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
-//                btnsalir.doClick();
+//                btnsalirActionPerformed(null);
 //                inhabilitar();
 //            }
 //            
@@ -63,7 +77,6 @@ public class frmplancha extends javax.swing.JInternalFrame {
 //        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
 //        getRootPane().getActionMap().put("ESCAPE", atcescape);
 //    }
-    
     
     private String accion = "guardar";
     
@@ -470,7 +483,7 @@ public class frmplancha extends javax.swing.JInternalFrame {
 
     private void txtobservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtobservacionActionPerformed
         // TODO add your handling code here:
-        txtobservacion.transferFocus();
+        btnguardar.requestFocus();
     }//GEN-LAST:event_txtobservacionActionPerformed
 
     
@@ -708,4 +721,5 @@ public class frmplancha extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtobservacion;
     private javax.swing.JTextField txtstock;
     // End of variables declaration//GEN-END:variables
+
 }

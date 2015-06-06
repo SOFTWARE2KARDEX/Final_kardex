@@ -33,11 +33,11 @@ public class frmusuariologin extends javax.swing.JFrame {
         this.setTitle("Acceso al Sistema Gigantografías Master");
         this.setLocationRelativeTo(null);
         
+//        this.addKeyListener(null);
+        
         btningresar.addKeyListener(new AddKey(btningresar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
         
-//        btningresar.addKeyListener(new PresionarTecla());
-//        
 //        addScapeKey();
         
     }
