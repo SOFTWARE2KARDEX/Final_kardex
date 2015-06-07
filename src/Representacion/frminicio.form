@@ -54,7 +54,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="cutMenuItem">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F2"/>
+                  <KeyStroke key="F2"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/hoja.png"/>
@@ -69,7 +69,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="copyMenuItem">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F3"/>
+                  <KeyStroke key="F3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/proveedor.png"/>
@@ -84,7 +84,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="tipodeoperaciones">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F4"/>
+                  <KeyStroke key="F4"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/cajas.png"/>
@@ -109,7 +109,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="contentMenuItem">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F5"/>
+                  <KeyStroke key="F5"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/ventas.png"/>
@@ -124,7 +124,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="operacion">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F6"/>
+                  <KeyStroke key="F6"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/da&#xf1;os.png"/>
@@ -153,7 +153,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="micompra">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F7"/>
+                  <KeyStroke key="F7"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/compra.png"/>
@@ -177,7 +177,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="clientesjMenuItem">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+F8"/>
+                  <KeyStroke key="F8"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/File/clientes.png"/>

@@ -9,14 +9,10 @@ import Datos.fproveedor;
 import Java_Class.AddKey;
 import Java_Class.Scape;
 import Logica.vproveedor;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import Representacion.frmvistaproveedor;
-
 import Restricciones.LetrasODigitos;
 import Restricciones.LimitarCaracteres;
 

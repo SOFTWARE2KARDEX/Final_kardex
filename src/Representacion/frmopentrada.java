@@ -11,14 +11,6 @@ import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import static Representacion.frminicio.escritorio;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
-
 /**
  *
  * @author HENRY

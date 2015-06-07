@@ -1,18 +1,13 @@
 
 package Representacion;
 
-import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 import Java_Class.CentrarVentanaInterna;
 import Java_Class.ImagenFondo;
-import java.awt.Event;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.beans.PropertyVetoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
 import javax.swing.ImageIcon;
@@ -374,7 +369,7 @@ public class frminicio extends javax.swing.JFrame {
         muarchivos.setMnemonic('e');
         muarchivos.setText("Archivos");
 
-        cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.CTRL_MASK));
+        cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
         cutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/hoja.png"))); // NOI18N
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Planchas");
@@ -385,7 +380,7 @@ public class frminicio extends javax.swing.JFrame {
         });
         muarchivos.add(cutMenuItem);
 
-        copyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.CTRL_MASK));
+        copyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
         copyMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/proveedor.png"))); // NOI18N
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Proveedores");
@@ -396,7 +391,7 @@ public class frminicio extends javax.swing.JFrame {
         });
         muarchivos.add(copyMenuItem);
 
-        tipodeoperaciones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
+        tipodeoperaciones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
         tipodeoperaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/cajas.png"))); // NOI18N
         tipodeoperaciones.setText("Tipo Operacion");
         tipodeoperaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -412,7 +407,7 @@ public class frminicio extends javax.swing.JFrame {
         musalidas.setMnemonic('h');
         musalidas.setText("Salidas");
 
-        contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
+        contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
         contentMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/ventas.png"))); // NOI18N
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Venta");
@@ -423,7 +418,7 @@ public class frminicio extends javax.swing.JFrame {
         });
         musalidas.add(contentMenuItem);
 
-        operacion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, java.awt.event.InputEvent.CTRL_MASK));
+        operacion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, 0));
         operacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/daños.png"))); // NOI18N
         operacion.setMnemonic('a');
         operacion.setText("Producción o Daño");
@@ -453,7 +448,7 @@ public class frminicio extends javax.swing.JFrame {
             }
         });
 
-        micompra.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, java.awt.event.InputEvent.CTRL_MASK));
+        micompra.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, 0));
         micompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/compra.png"))); // NOI18N
         micompra.setText("Compra");
         micompra.addActionListener(new java.awt.event.ActionListener() {
@@ -468,7 +463,7 @@ public class frminicio extends javax.swing.JFrame {
         muregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/agregar.png"))); // NOI18N
         muregistrar.setText("Registrar");
 
-        clientesjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, java.awt.event.InputEvent.CTRL_MASK));
+        clientesjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, 0));
         clientesjMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/clientes.png"))); // NOI18N
         clientesjMenuItem.setText("Clientes");
         clientesjMenuItem.addActionListener(new java.awt.event.ActionListener() {

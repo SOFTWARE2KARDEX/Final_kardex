@@ -4,24 +4,18 @@ import Datos.fcliente;
 import Java_Class.AddKey;
 import Java_Class.Scape;
 import Logica.vcliente;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import Restricciones.LimitarCaracteres;
 import Restricciones.LetrasODigitos;
-import java.awt.event.ActionEvent;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
 
 /**
  *
  * @author HENRY
+ * 
  */
+
 public class frmcliente extends javax.swing.JInternalFrame {
 
     public frmcliente() {

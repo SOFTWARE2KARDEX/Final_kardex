@@ -5,7 +5,6 @@
  */
 package Representacion;
 
-import Datos.fcliente;
 import Datos.fproveedor;
 import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
@@ -13,12 +12,12 @@ import Java_Class.Scape;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import Representacion.frmopentrada;
-
 /**
  *
  * @author HENRY
+ * 
  */
+
 public class frmvistaproveedor extends javax.swing.JInternalFrame {
 
     /**

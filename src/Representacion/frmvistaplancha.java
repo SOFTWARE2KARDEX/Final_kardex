@@ -8,8 +8,6 @@ package Representacion;
 import Datos.fplancha;
 import Java_Class.AddKey;
 import Java_Class.Scape;
-import Representacion.frmoperacion;
-import Representacion.frmopentrada;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
