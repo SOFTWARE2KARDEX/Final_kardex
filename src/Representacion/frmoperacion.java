@@ -4,6 +4,7 @@ package Representacion;
 import Datos.foperacion;
 import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
+import Java_Class.Scape;
 
 import Logica.voperacion;
 import Restricciones.LetrasODigitos;
@@ -37,7 +38,7 @@ public class frmoperacion extends javax.swing.JInternalFrame {
         btneliminar.addKeyListener(new AddKey(btneliminar));
         btnguardar.addKeyListener(new AddKey(btnguardar));        
         
-        
+        new Scape(this, btnsalir).mapeoTecla();
     }
     
     
@@ -660,7 +661,8 @@ public class frmoperacion extends javax.swing.JInternalFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
     }//GEN-LAST:event_btnsalirActionPerformed
 

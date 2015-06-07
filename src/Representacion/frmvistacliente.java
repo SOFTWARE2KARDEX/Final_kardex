@@ -8,6 +8,7 @@ package Representacion;
 import Datos.fcliente;
 import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
+import Java_Class.Scape;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,6 +28,8 @@ public class frmvistacliente extends javax.swing.JInternalFrame {
         btnbuscar.addKeyListener(new AddKey(btnbuscar));
         btnagregar.addKeyListener(new AddKey(btnagregar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
      void ocultar_columnas() {
@@ -204,8 +207,8 @@ public class frmvistacliente extends javax.swing.JInternalFrame {
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
         
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
-        
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         frmopventa.btnbuscliente.setEnabled(true);
         
         //inhabilitar();

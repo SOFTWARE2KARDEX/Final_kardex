@@ -8,6 +8,7 @@ package Representacion;
 
 import Datos.ftipooperacion;
 import Java_Class.AddKey;
+import Java_Class.Scape;
 
 import Logica.vtipooperacion;
 import javax.swing.JOptionPane;
@@ -30,7 +31,9 @@ public class frmtipooperacion extends javax.swing.JInternalFrame {
         btnnuevo.addKeyListener(new AddKey(btnnuevo));
         btnbuscar.addKeyListener(new AddKey(btnbuscar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
-        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        btnguardar.addKeyListener(new AddKey(btnguardar));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
     
@@ -416,7 +419,8 @@ public class frmtipooperacion extends javax.swing.JInternalFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
     }//GEN-LAST:event_btnsalirActionPerformed
 

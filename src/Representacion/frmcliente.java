@@ -2,6 +2,7 @@ package Representacion;
 
 import Datos.fcliente;
 import Java_Class.AddKey;
+import Java_Class.Scape;
 import Logica.vcliente;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -38,6 +39,8 @@ public class frmcliente extends javax.swing.JInternalFrame {
         btnsalir.addKeyListener(new AddKey(btnsalir));
         btneliminar.addKeyListener(new AddKey(btneliminar));
         btnguardar.addKeyListener(new AddKey(btnguardar));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
     
@@ -473,7 +476,8 @@ public class frmcliente extends javax.swing.JInternalFrame {
     //Boton Salir
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
         if(new frmvistacliente().isShowing() || new frmvistacliente().isIcon()){
             frmvistacliente.btnagregar.setEnabled(false);            
@@ -601,8 +605,12 @@ public class frmcliente extends javax.swing.JInternalFrame {
     //Botón Cancelar
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
+        if(new frmvistacliente().isShowing() || new frmvistacliente().isIcon()){
+            frmvistacliente.btnagregar.setEnabled(false);            
+        }        
     }//GEN-LAST:event_btncancelarActionPerformed
 
 

@@ -33,38 +33,26 @@ public class frmusuariologin extends javax.swing.JFrame {
         this.setTitle("Acceso al Sistema Gigantografías Master");
         this.setLocationRelativeTo(null);
         
-//        this.addKeyListener(null);
-        
         btningresar.addKeyListener(new AddKey(btningresar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
         
-//        addScapeKey();
+        ScapeKey();
         
     }
     
-    
-//    public class PresionarTecla extends KeyAdapter {
-// 
-//      public void keyPressed(KeyEvent ke) {
-//            if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
-//                btningresar.doClick();
-//            }
-//      }
-//    }
-//    
-//    public void addScapeKey(){
-//        KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
-//        Action atcescape = new AbstractAction(){
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                btnsalir.doClick();
-//            }
-//            
-//        };
-//        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
-//        getRootPane().getActionMap().put("ESCAPE", atcescape);
-//    }
+    public void ScapeKey(){
+        KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
+        Action atcescape = new AbstractAction(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnsalirActionPerformed(null);
+            }
+            
+        };
+        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
+        getRootPane().getActionMap().put("ESCAPE", atcescape);
+    }
     
     
     void inhabilitar(){

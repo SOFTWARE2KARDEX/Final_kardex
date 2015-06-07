@@ -10,6 +10,9 @@ import java.awt.Event;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
 import javax.swing.ImageIcon;
@@ -49,13 +52,19 @@ public class frminicio extends javax.swing.JFrame {
         InputMap map = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         
         //KeyStroke key_F = KeyStroke.getKeyStroke(KeyEvent.VK_F, Event.CTRL_MASK, true);
+        KeyStroke key_ESC = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false);
         KeyStroke key_F1 = KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0, false);
         KeyStroke key_F2 = KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0, false);
         KeyStroke key_F3 = KeyStroke.getKeyStroke(KeyEvent.VK_F3, 0, false);
         KeyStroke key_F4 = KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0, false);
         KeyStroke key_F5 = KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0, false);
         KeyStroke key_F6 = KeyStroke.getKeyStroke(KeyEvent.VK_F6, 0, false);
+        KeyStroke key_F7 = KeyStroke.getKeyStroke(KeyEvent.VK_F7, 0, false);
+        KeyStroke key_F8 = KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0, false);
         
+        map.put(key_ESC, "accion_ESC");
+        mapaAccion.put("accion_ESC",Accion_ESC());
+
         map.put(key_F1, "accion_F1");
         mapaAccion.put("accion_F1",Accion_F1());
         
@@ -73,13 +82,29 @@ public class frminicio extends javax.swing.JFrame {
  
         map.put(key_F6, "accion_F6");
         mapaAccion.put("accion_F6",Accion_F6());
+        
+        map.put(key_F7, "accion_F7");
+        mapaAccion.put("accion_F7",Accion_F7());
+
+        map.put(key_F8, "accion_F8");
+        mapaAccion.put("accion_F8",Accion_F8());
+        
     }
 
+    public AbstractAction Accion_ESC(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //SALIR
+                jmi_exitActionPerformed(e);   
+            }
+        };
+    }    
+    
     public AbstractAction Accion_F1(){
         return new AbstractAction() {   
             public void actionPerformed(ActionEvent e) {   
-                //PLANCHAS
-                jmi_exitActionPerformed(e);   
+                //CAMBIAR USUARIO
+                jMenuItem4ActionPerformed(e);   
             }
         };
     }    
@@ -129,6 +154,25 @@ public class frminicio extends javax.swing.JFrame {
         };
     }
 
+    public AbstractAction Accion_F7(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //ENTRADAS COMPRA
+                micompraActionPerformed(e);   
+            }
+        };
+    }
+    
+    public AbstractAction Accion_F8(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //CLIENTES
+                clientesjMenuItemActionPerformed(e);   
+            }
+        };
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -167,7 +211,7 @@ public class frminicio extends javax.swing.JFrame {
         entrada = new javax.swing.JMenu();
         micompra = new javax.swing.JMenuItem();
         muregistrar = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        clientesjMenuItem = new javax.swing.JMenuItem();
         muherramientas = new javax.swing.JMenu();
         muconfiguraciones = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -424,15 +468,15 @@ public class frminicio extends javax.swing.JFrame {
         muregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/agregar.png"))); // NOI18N
         muregistrar.setText("Registrar");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/clientes.png"))); // NOI18N
-        jMenuItem3.setText("Clientes");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        clientesjMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, java.awt.event.InputEvent.CTRL_MASK));
+        clientesjMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/clientes.png"))); // NOI18N
+        clientesjMenuItem.setText("Clientes");
+        clientesjMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                clientesjMenuItemActionPerformed(evt);
             }
         });
-        muregistrar.add(jMenuItem3);
+        muregistrar.add(clientesjMenuItem);
 
         menuBar.add(muregistrar);
 
@@ -525,7 +569,9 @@ public class frminicio extends javax.swing.JFrame {
         else{
             
             CentrarVentanaInterna.FocusInternalWindow(form1);
-            
+            form1.toFront();
+            form1.moveToFront();
+            form1.requestFocus();
         }
         
     }//GEN-LAST:event_cutMenuItemActionPerformed
@@ -552,7 +598,7 @@ public class frminicio extends javax.swing.JFrame {
         //form.setVisible(true);
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void clientesjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesjMenuItemActionPerformed
         // TODO add your handling code here:
         if(form3.isShowing() || form3.isIcon()){
             Toolkit.getDefaultToolkit().beep();
@@ -566,7 +612,7 @@ public class frminicio extends javax.swing.JFrame {
         //escritorio.add(form);
         //form.toFront();
         //form.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_clientesjMenuItemActionPerformed
 
     private void operacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_operacionActionPerformed
         // TODO add your handling code here:
@@ -751,6 +797,7 @@ public class frminicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem clientesjMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -763,7 +810,6 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

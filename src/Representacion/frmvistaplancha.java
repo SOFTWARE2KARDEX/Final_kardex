@@ -7,6 +7,7 @@ package Representacion;
 
 import Datos.fplancha;
 import Java_Class.AddKey;
+import Java_Class.Scape;
 import Representacion.frmoperacion;
 import Representacion.frmopentrada;
 import javax.swing.JOptionPane;
@@ -27,7 +28,9 @@ public class frmvistaplancha extends javax.swing.JInternalFrame {
         //this.setLocationRelativeTo(null);
         
         btnbuscar.addKeyListener(new AddKey(btnbuscar));
-        btnsalir.addKeyListener(new AddKey(btnsalir));        
+        btnsalir.addKeyListener(new AddKey(btnsalir));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
     
@@ -214,7 +217,9 @@ public class frmvistaplancha extends javax.swing.JInternalFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        
+        this.doDefaultCloseAction();
         
         frmoperacion.btnbuscarplancha.setEnabled(true);
         

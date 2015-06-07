@@ -7,6 +7,7 @@ package Representacion;
 
 import Datos.fproveedor;
 import Java_Class.AddKey;
+import Java_Class.Scape;
 import Logica.vproveedor;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -41,7 +42,9 @@ public class frmproveedor extends javax.swing.JInternalFrame {
         btncancelar.addKeyListener(new AddKey(btncancelar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
         btneliminar.addKeyListener(new AddKey(btneliminar));
-        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        btnguardar.addKeyListener(new AddKey(btnguardar));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
     
@@ -513,10 +516,12 @@ public class frmproveedor extends javax.swing.JInternalFrame {
     
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
-        
-        frmvistaproveedor.btnagregar.setEnabled(true);
+        if(new frmvistaproveedor().isShowing() || new frmvistaproveedor().isIcon()){
+            frmvistaproveedor.btnagregar.setEnabled(true);
+        }
         
     }//GEN-LAST:event_btncancelarActionPerformed
 
@@ -576,7 +581,8 @@ public class frmproveedor extends javax.swing.JInternalFrame {
     
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
         
         // Indica si existe una instancia de la clase frmvistaproveedor 

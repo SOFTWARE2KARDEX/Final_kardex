@@ -49,16 +49,17 @@ public class frmplancha extends javax.swing.JInternalFrame {
         btncancelar.addKeyListener(new AddKey(btncancelar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
         btneliminar.addKeyListener(new AddKey(btneliminar));
-        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        btnguardar.addKeyListener(new AddKey(btnguardar));
 
         //mapeoTecla();
 
         //addScapeKey();
         
-        //Scape(this);
+        new Scape(this, btnsalir).mapeoTecla();
         
-        this.addKeyListener(new KeyScape(this));
+        //this.addKeyListener(new KeyScape(btnsalir));
         
+//        Este metodo no cierra el ijframe si no tiene el focus
 //        this.addKeyListener(new KeyAdapter(){
 //            public void keyTyped(KeyEvent ke_event){
 //                if(ke_event.getKeyCode() == KeyEvent.VK_ESCAPE){
@@ -68,6 +69,8 @@ public class frmplancha extends javax.swing.JInternalFrame {
 //        });
         
     }
+
+/*****************************************************************************/    
     
 //    public void mapeoTecla(){
 //        
@@ -87,7 +90,9 @@ public class frmplancha extends javax.swing.JInternalFrame {
 //                btnsalirActionPerformed(e);
 //            }
 //        };
-//    }    
+//    }
+    
+/*****************************************************************************/
     
 //    public void addScapeKey(){
 //        //JInternalFrame jifaux = this;
@@ -104,6 +109,8 @@ public class frmplancha extends javax.swing.JInternalFrame {
 //        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(kstescape, "ESCAPE");
 //        getRootPane().getActionMap().put("ESCAPE", atcescape);
 //    }
+    
+/*****************************************************************************/
     
     private String accion = "guardar";
     
@@ -592,7 +599,8 @@ public class frmplancha extends javax.swing.JInternalFrame {
     //Botón Cancelar
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
     }//GEN-LAST:event_btncancelarActionPerformed
 
@@ -656,7 +664,8 @@ public class frmplancha extends javax.swing.JInternalFrame {
     //Botón Salir
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();    // setea el focus del jinternalframe a this
         inhabilitar();
     }//GEN-LAST:event_btnsalirActionPerformed
 

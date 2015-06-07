@@ -4,6 +4,7 @@ package Representacion;
 import Datos.fopentrada;
 import Java_Class.AddKey;
 import Java_Class.CentrarVentanaInterna;
+import Java_Class.Scape;
 import Logica.vopentrada;
 import java.sql.Date;
 import java.util.Calendar;
@@ -38,7 +39,9 @@ public class frmopentrada extends javax.swing.JInternalFrame {
         btnbusproveedor.addKeyListener(new AddKey(btnbusproveedor));
         btnsalir.addKeyListener(new AddKey(btnsalir));
         btneliminar.addKeyListener(new AddKey(btneliminar));
-        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        btnguardar.addKeyListener(new AddKey(btnguardar));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
     
@@ -788,7 +791,8 @@ public class frmopentrada extends javax.swing.JInternalFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
     }//GEN-LAST:event_btnsalirActionPerformed
 

@@ -7,6 +7,7 @@ package Representacion;
 
 import Datos.ftipooperacion;
 import Java_Class.AddKey;
+import Java_Class.Scape;
 import Representacion.frmoperacion;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -25,6 +26,9 @@ public class frmvistaoperacion extends javax.swing.JInternalFrame {
         mostrar("");
         //this.setLocationRelativeTo(null);
         btnsalir.addKeyListener(new AddKey(btnsalir));
+        
+        new Scape(this, btnsalir).mapeoTecla();
+        
     }
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -156,8 +160,8 @@ public class frmvistaoperacion extends javax.swing.JInternalFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
-        
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         frmoperacion.btnbuscaroperacion.setEnabled(true);
         
     }//GEN-LAST:event_btnsalirActionPerformed

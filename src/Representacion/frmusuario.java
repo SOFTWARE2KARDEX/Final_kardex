@@ -7,6 +7,7 @@ package Representacion;
 
 import Datos.fusuario;
 import Java_Class.AddKey;
+import Java_Class.Scape;
 import Logica.vusuario;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -30,7 +31,9 @@ public class frmusuario extends javax.swing.JInternalFrame {
         btncancelar.addKeyListener(new AddKey(btncancelar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
         btneliminar.addKeyListener(new AddKey(btneliminar));
-        btnguardar.addKeyListener(new AddKey(btnguardar));        
+        btnguardar.addKeyListener(new AddKey(btnguardar));
+        
+        new Scape(this, btnsalir).mapeoTecla();
         
     }
     private String accion = "guardar";
@@ -509,7 +512,8 @@ public class frmusuario extends javax.swing.JInternalFrame {
     //Boton Salir
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-        this.getDesktopPane().getDesktopManager().closeFrame(this);
+        //this.getDesktopPane().getDesktopManager().closeFrame(this);
+        this.doDefaultCloseAction();
         inhabilitar();
     }//GEN-LAST:event_btnsalirActionPerformed
 

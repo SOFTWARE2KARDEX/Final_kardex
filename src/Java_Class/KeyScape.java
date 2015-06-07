@@ -22,49 +22,58 @@ import javax.swing.KeyStroke;
 
 public class KeyScape extends KeyAdapter{
 
-    private JInternalFrame internalframe = null;
-//    private JButton jbutton;
-//
-//    public KeyScape(JButton jbutton) {
-//        this.jbutton = jbutton;
-//    }
+    //private JInternalFrame internalframe = null;
+    private JButton jbutton;
 
-    public KeyScape(JInternalFrame internalframe) {
-        this.internalframe = internalframe;
+    public KeyScape(JButton jbutton) {
+        this.jbutton = jbutton;
     }
+
+//    public KeyScape(JInternalFrame internalframe) {
+//        this.internalframe = internalframe;
+//    }
     
     @Override
     public void keyTyped(KeyEvent ke) {
-        
+//        if(ke.getKeyCode() == KeyEvent.VK_ESCAPE){
+//            
+//            internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+//        }        
     }
 
     @Override
     public void keyPressed(KeyEvent ke) {
 
-        if(ke.getKeyCode() == KeyEvent.VK_ESCAPE){
-            
-            KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
-            Action atcescape = new AbstractAction(){
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    //jbutton.doClick();
-                    internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
-                }
-
-            };
-            escritorio.getRootPane().getInputMap(JInternalFrame.WHEN_FOCUSED).put(kstescape, "ESCAPE");
-            escritorio.getRootPane().getActionMap().put("ESCAPE", atcescape);
-            
-            //internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
-            
-        }        
+//        if(ke.getKeyCode() == KeyEvent.VK_ESCAPE){
+//            
+//            jbutton.doClick();
+//            //internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+//            
+////            KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
+////            Action atcescape = new AbstractAction(){
+////
+////                @Override
+////                public void actionPerformed(ActionEvent e) {
+////                    //jbutton.doClick();
+////                    internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+////                }
+////
+////            };
+////            escritorio.getRootPane().getInputMap(JInternalFrame.WHEN_FOCUSED).put(kstescape, "ESCAPE");
+////            escritorio.getRootPane().getActionMap().put("ESCAPE", atcescape);
+//            
+//            //internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+//            
+//        }
         
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-        
+    public void keyReleased(KeyEvent ke) {
+//        if(ke.getKeyCode() == KeyEvent.VK_ESCAPE){
+//            
+//            internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+//        }                
     }
 
 }
