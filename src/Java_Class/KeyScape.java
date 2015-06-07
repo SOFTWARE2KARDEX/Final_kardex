@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Java_Class;
 
 import static Representacion.frminicio.escritorio;
@@ -13,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JInternalFrame;
 import javax.swing.KeyStroke;
@@ -23,24 +20,46 @@ import javax.swing.KeyStroke;
  * 
  */
 
-public class KeyScape implements KeyListener{
+public class KeyScape extends KeyAdapter{
 
     private JInternalFrame internalframe = null;
+//    private JButton jbutton;
+//
+//    public KeyScape(JButton jbutton) {
+//        this.jbutton = jbutton;
+//    }
 
     public KeyScape(JInternalFrame internalframe) {
         this.internalframe = internalframe;
     }
     
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent ke) {
         
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-            internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
-        }
+    public void keyPressed(KeyEvent ke) {
+
+        if(ke.getKeyCode() == KeyEvent.VK_ESCAPE){
+            
+            KeyStroke kstescape = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,false);
+            Action atcescape = new AbstractAction(){
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    //jbutton.doClick();
+                    internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+                }
+
+            };
+            escritorio.getRootPane().getInputMap(JInternalFrame.WHEN_FOCUSED).put(kstescape, "ESCAPE");
+            escritorio.getRootPane().getActionMap().put("ESCAPE", atcescape);
+            
+            //internalframe.getDesktopPane().getDesktopManager().closeFrame(internalframe);
+            
+        }        
+        
     }
 
     @Override

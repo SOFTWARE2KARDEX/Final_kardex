@@ -8,6 +8,7 @@ package Representacion;
 import Datos.fplancha;
 import Java_Class.AddKey;
 import Java_Class.KeyScape;
+import Java_Class.Scape;
 import Logica.vplancha;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -19,6 +20,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JInternalFrame;
 import javax.swing.KeyStroke;
@@ -48,9 +51,13 @@ public class frmplancha extends javax.swing.JInternalFrame {
         btneliminar.addKeyListener(new AddKey(btneliminar));
         btnguardar.addKeyListener(new AddKey(btnguardar));        
 
+        //mapeoTecla();
+
         //addScapeKey();
         
-        addKeyListener(new KeyScape(this));
+        //Scape(this);
+        
+        this.addKeyListener(new KeyScape(this));
         
 //        this.addKeyListener(new KeyAdapter(){
 //            public void keyTyped(KeyEvent ke_event){
@@ -61,6 +68,26 @@ public class frmplancha extends javax.swing.JInternalFrame {
 //        });
         
     }
+    
+//    public void mapeoTecla(){
+//        
+//        ActionMap mapaAccion = this.getRootPane().getActionMap();
+//        InputMap map = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+//        
+//        KeyStroke Key_ESC = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE,0,true);
+//        
+//        map.put(Key_ESC, "accion_ESC");
+//        mapaAccion.put("accion_ESC",Accion_ESC());
+//        
+//    }
+//    
+//    public AbstractAction Accion_ESC(){
+//        return new AbstractAction() {
+//            public void actionPerformed(ActionEvent e) {
+//                btnsalirActionPerformed(e);
+//            }
+//        };
+//    }    
     
 //    public void addScapeKey(){
 //        //JInternalFrame jifaux = this;

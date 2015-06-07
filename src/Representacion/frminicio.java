@@ -6,8 +6,16 @@ import javax.swing.JOptionPane;
 
 import Java_Class.CentrarVentanaInterna;
 import Java_Class.ImagenFondo;
+import java.awt.Event;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
 import javax.swing.ImageIcon;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -32,6 +40,93 @@ public class frminicio extends javax.swing.JFrame {
         escritorio.setBorder(new ImagenFondo());
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
         this.setTitle("Gigantografías Master");
+        mapeoTeclas();
+    }
+    
+    //Permite abrir las interfaces por medio de teclas
+    public void mapeoTeclas(){
+        ActionMap mapaAccion = this.getRootPane().getActionMap();
+        InputMap map = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        
+        //KeyStroke key_F = KeyStroke.getKeyStroke(KeyEvent.VK_F, Event.CTRL_MASK, true);
+        KeyStroke key_F1 = KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0, false);
+        KeyStroke key_F2 = KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0, false);
+        KeyStroke key_F3 = KeyStroke.getKeyStroke(KeyEvent.VK_F3, 0, false);
+        KeyStroke key_F4 = KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0, false);
+        KeyStroke key_F5 = KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0, false);
+        KeyStroke key_F6 = KeyStroke.getKeyStroke(KeyEvent.VK_F6, 0, false);
+        
+        map.put(key_F1, "accion_F1");
+        mapaAccion.put("accion_F1",Accion_F1());
+        
+        map.put(key_F2, "accion_F2");
+        mapaAccion.put("accion_F2",Accion_F2());
+ 
+        map.put(key_F3, "accion_F3");
+        mapaAccion.put("accion_F3",Accion_F3());
+ 
+        map.put(key_F4, "accion_F4");
+        mapaAccion.put("accion_F4",Accion_F4());
+ 
+        map.put(key_F5, "accion_F5");
+        mapaAccion.put("accion_F5",Accion_F5());
+ 
+        map.put(key_F6, "accion_F6");
+        mapaAccion.put("accion_F6",Accion_F6());
+    }
+
+    public AbstractAction Accion_F1(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //PLANCHAS
+                jmi_exitActionPerformed(e);   
+            }
+        };
+    }    
+    
+    public AbstractAction Accion_F2(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //PLANCHAS
+                cutMenuItemActionPerformed(e);   
+            }
+        };
+    }
+        
+    public AbstractAction Accion_F3(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //PROVEEDORES
+                copyMenuItemActionPerformed(e);   
+            }
+        };
+    }
+        
+    public AbstractAction Accion_F4(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //TIPO OPERACION
+                tipodeoperacionesActionPerformed(e);   
+            }
+        };
+    }
+        
+    public AbstractAction Accion_F5(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) { 
+                //VENTA
+                contentMenuItemActionPerformed(e);   
+            }
+        };
+    }
+        
+    public AbstractAction Accion_F6(){
+        return new AbstractAction() {   
+            public void actionPerformed(ActionEvent e) {   
+                //PRODUCCION O DAÑO
+                operacionActionPerformed(e);   
+            }
+        };
     }
 
     /**
@@ -61,6 +156,7 @@ public class frminicio extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         musismaster = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jmi_exit = new javax.swing.JMenuItem();
         muarchivos = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
@@ -92,7 +188,7 @@ public class frminicio extends javax.swing.JFrame {
         lblimagenFondo.setBackground(new java.awt.Color(0, 153, 51));
         lblimagenFondo.setToolTipText("");
         escritorio.add(lblimagenFondo);
-        lblimagenFondo.setBounds(4, 4, 800, 510);
+        lblimagenFondo.setBounds(4, 4, 800, 490);
 
         jDesktopPane1.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -210,6 +306,7 @@ public class frminicio extends javax.swing.JFrame {
         musismaster.setMnemonic('f');
         musismaster.setText("SisMaster");
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuItem4.setText("Cambiar de Usuario");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,12 +315,22 @@ public class frminicio extends javax.swing.JFrame {
         });
         musismaster.add(jMenuItem4);
 
+        jmi_exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        jmi_exit.setText("Exit");
+        jmi_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_exitActionPerformed(evt);
+            }
+        });
+        musismaster.add(jmi_exit);
+
         menuBar.add(musismaster);
 
         muarchivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/Archivo.png"))); // NOI18N
         muarchivos.setMnemonic('e');
         muarchivos.setText("Archivos");
 
+        cutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.CTRL_MASK));
         cutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/hoja.png"))); // NOI18N
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Planchas");
@@ -234,6 +341,7 @@ public class frminicio extends javax.swing.JFrame {
         });
         muarchivos.add(cutMenuItem);
 
+        copyMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.CTRL_MASK));
         copyMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/proveedor.png"))); // NOI18N
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Proveedores");
@@ -244,6 +352,7 @@ public class frminicio extends javax.swing.JFrame {
         });
         muarchivos.add(copyMenuItem);
 
+        tipodeoperaciones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
         tipodeoperaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/cajas.png"))); // NOI18N
         tipodeoperaciones.setText("Tipo Operacion");
         tipodeoperaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -259,6 +368,7 @@ public class frminicio extends javax.swing.JFrame {
         musalidas.setMnemonic('h');
         musalidas.setText("Salidas");
 
+        contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.CTRL_MASK));
         contentMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/ventas.png"))); // NOI18N
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Venta");
@@ -269,6 +379,7 @@ public class frminicio extends javax.swing.JFrame {
         });
         musalidas.add(contentMenuItem);
 
+        operacion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F6, java.awt.event.InputEvent.CTRL_MASK));
         operacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/daños.png"))); // NOI18N
         operacion.setMnemonic('a');
         operacion.setText("Producción o Daño");
@@ -298,6 +409,7 @@ public class frminicio extends javax.swing.JFrame {
             }
         });
 
+        micompra.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, java.awt.event.InputEvent.CTRL_MASK));
         micompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/compra.png"))); // NOI18N
         micompra.setText("Compra");
         micompra.addActionListener(new java.awt.event.ActionListener() {
@@ -312,6 +424,7 @@ public class frminicio extends javax.swing.JFrame {
         muregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/agregar.png"))); // NOI18N
         muregistrar.setText("Registrar");
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F8, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/clientes.png"))); // NOI18N
         jMenuItem3.setText("Clientes");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -357,6 +470,11 @@ public class frminicio extends javax.swing.JFrame {
         musalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 musalirMouseClicked(evt);
+            }
+        });
+        musalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                musalirActionPerformed(evt);
             }
         });
         menuBar.add(musalir);
@@ -415,7 +533,7 @@ public class frminicio extends javax.swing.JFrame {
     private void musalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musalirMouseClicked
         // TODO add your handling code here:
         System.exit(0);
-        musalir.requestFocus();
+        //musalir.requestFocus();
     }//GEN-LAST:event_musalirMouseClicked
 
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
@@ -589,6 +707,14 @@ public class frminicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void musalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_musalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_musalirActionPerformed
+
+    private void jmi_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jmi_exitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -644,6 +770,7 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JMenuItem jmi_exit;
     public static javax.swing.JLabel lblacceso;
     public static javax.swing.JLabel lblapellido;
     public static javax.swing.JLabel lblidusuario;
