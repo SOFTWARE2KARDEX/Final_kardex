@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Logica;
 
 /**
@@ -12,9 +7,6 @@ package Logica;
 public class vopentrada extends voperacion {
     private int idProveedor;
     private String Documento;
-    
-    
-    
 
     public vopentrada() {
     }
@@ -23,10 +15,6 @@ public class vopentrada extends voperacion {
         this.idProveedor = idProveedor;
         this.Documento = Documento;
     }
-
-    
-    
-    
     
     public int getIdProveedor() {
         return idProveedor;
@@ -43,11 +31,5 @@ public class vopentrada extends voperacion {
     public void setDocumento(String Documento) {
         this.Documento = Documento;
     }
-    
-    
-    
-    
-    
-    
     
 }
