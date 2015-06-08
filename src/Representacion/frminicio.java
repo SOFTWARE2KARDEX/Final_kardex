@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 
 import Java_Class.CentrarVentanaInterna;
 import Java_Class.ImagenFondo;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -39,6 +40,10 @@ public class frminicio extends javax.swing.JFrame {
         this.setExtendedState(frminicio.MAXIMIZED_BOTH);
         this.setTitle("Gigantografías Master");
         mapeoTeclas();
+        
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/File/kardex.png")); 
+        setIconImage(icon);
+        
     }
     
     //Permite abrir las interfaces por medio de teclas

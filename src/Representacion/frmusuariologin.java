@@ -8,6 +8,8 @@ package Representacion;
 import Datos.fusuario;
 import Java_Class.AddKey;
 import Logica.vusuario;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
@@ -31,6 +33,9 @@ public class frmusuariologin extends javax.swing.JFrame {
         inhabilitar();
         this.setTitle("Acceso al Sistema Gigantografías Master");
         this.setLocationRelativeTo(null);
+        
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/File/kardex.png")); 
+        setIconImage(icon);
         
         btningresar.addKeyListener(new AddKey(btningresar));
         btnsalir.addKeyListener(new AddKey(btnsalir));
