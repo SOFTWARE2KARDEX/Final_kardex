@@ -218,6 +218,8 @@ public class frminicio extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         mureportes = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        ayudajMenuItem = new javax.swing.JMenuItem();
+        acercadejMenuItem = new javax.swing.JMenuItem();
         musalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -351,6 +353,7 @@ public class frminicio extends javax.swing.JFrame {
         musismaster.setText("SisMaster");
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/disconnect.png"))); // NOI18N
         jMenuItem4.setText("Cambiar de Usuario");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,6 +363,7 @@ public class frminicio extends javax.swing.JFrame {
         musismaster.add(jMenuItem4);
 
         jmi_exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        jmi_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/door_in.png"))); // NOI18N
         jmi_exit.setText("Exit");
         jmi_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -507,6 +511,25 @@ public class frminicio extends javax.swing.JFrame {
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/Ayuda.png"))); // NOI18N
         jMenu5.setText("Ayuda");
+
+        ayudajMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/help.png"))); // NOI18N
+        ayudajMenuItem.setText("Ayuda");
+        ayudajMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudajMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu5.add(ayudajMenuItem);
+
+        acercadejMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/comment.png"))); // NOI18N
+        acercadejMenuItem.setText("Acerca De");
+        acercadejMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acercadejMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu5.add(acercadejMenuItem);
+
         menuBar.add(jMenu5);
 
         musalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/File/Salir.png"))); // NOI18N
@@ -578,7 +601,13 @@ public class frminicio extends javax.swing.JFrame {
 
     private void musalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_musalirMouseClicked
         // TODO add your handling code here:
-        System.exit(0);
+        
+        int slir = JOptionPane.showConfirmDialog(this, "REALMENTE DESEA CERRAR LA APLICACION","CERRANDO APLICACION",0,3);
+        if(slir==JOptionPane.OK_OPTION)
+        {
+            System.exit(0);
+        }
+        
         //musalir.requestFocus();
     }//GEN-LAST:event_musalirMouseClicked
 
@@ -758,8 +787,35 @@ public class frminicio extends javax.swing.JFrame {
     }//GEN-LAST:event_musalirActionPerformed
 
     private void jmi_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_exitActionPerformed
-        System.exit(0);
+        
+        int slir = JOptionPane.showConfirmDialog(this, "REALMENTE DESEA CERRAR LA APLICACION","CERRANDO APLICACION",0,3);
+        if(slir==JOptionPane.OK_OPTION)
+        {
+            System.exit(0);
+        }
+        
     }//GEN-LAST:event_jmi_exitActionPerformed
+
+    private void acercadejMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acercadejMenuItemActionPerformed
+        JOptionPane.showMessageDialog(this,
+                                "             ''GIGANTOGRAFIAS MASTER''" +
+                                "\nSISTEMA DE INVENTARIOS PARA .."+
+                                "\nPERU, TACNA"+
+                                "\nVERSION: 1.0"+
+                                "\nPROHIBIDA LA REPRODUCCION TOTAL O PARCIAL,"+
+                                "\nSIN LA AUTORIZACION POR ESCRITO DE LOS AUTORES...",
+                                "ACERCA DE...",
+                                JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_acercadejMenuItemActionPerformed
+
+    private void ayudajMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudajMenuItemActionPerformed
+
+        JOptionPane.showMessageDialog(this,
+            "NO SE HAN ENCONTRADO LOS ARCHIVOS DE AYUDA,\nCONSULTE EL MANUAL DE USUARIO.",
+            "AYUDA DEL SISTEMA",
+            JOptionPane.WARNING_MESSAGE);
+        
+    }//GEN-LAST:event_ayudajMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -797,6 +853,8 @@ public class frminicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem acercadejMenuItem;
+    private javax.swing.JMenuItem ayudajMenuItem;
     private javax.swing.JMenuItem clientesjMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;

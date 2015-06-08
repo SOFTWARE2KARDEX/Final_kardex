@@ -208,6 +208,9 @@ public class frmvistaplancha extends javax.swing.JInternalFrame {
             frmopventa.txtidplancha.setText(cod);
             frmopventa.txtplancha.setText(valor);
             
+            frmopentrada.txtidplancha.setText(cod);
+            frmopentrada.txtplancha.setText(valor);
+            
             this.dispose();
             
         }
